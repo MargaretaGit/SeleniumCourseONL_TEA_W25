@@ -1,4 +1,4 @@
-package pl.coderslab.test;
+package browserOptions;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -6,16 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DuckDuckGoSearchTest {
+public class BrowserTest {
 
     @Test
-    public void qwantSearchTest() {
+    public void browserTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://duckduckgo.com/");
-        WebElement searchInputBox = driver.findElement(By.name("q"));
-        searchInputBox.sendKeys("Star Wars");
-        searchInputBox.submit();
-//driver.quit();
+        driver.get("https://www.qwant.com/");
+        driver.get("http://automationpractice.com/index.php");
+        driver.navigate().back();
+        driver.navigate().forward();
+        driver.manage().window().maximize();
+
     }
 }
